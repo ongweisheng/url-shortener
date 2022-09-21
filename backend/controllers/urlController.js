@@ -13,3 +13,12 @@ export async function createShortenedUrl(req, res) {
         res.status(500).json(err)
     }
 }
+
+export async function getUrls(req, res) {
+    try {
+        const response = await Url.find()
+        res.status(200).json(response)
+    } catch (err) {
+        res.status(500).json(err)
+    }
+}
