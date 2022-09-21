@@ -12,7 +12,8 @@ const urlSchema = new Schema({
     shortenedUrl: {
         type: String,
         required: true,
-        default: nanoid()
+        unique: true,
+        default: nanoid(),
     }
 })
 

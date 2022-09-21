@@ -2,6 +2,7 @@ import express from "express"
 import mongoose from "mongoose"
 import cors from "cors"
 import "dotenv/config"
+import urlRoutes from "./routes/urlRoutes.js"
 
 const uri = process.env.DB_URL
 
@@ -16,6 +17,10 @@ mongoose.connect(uri)
 const app = express();
 const port = process.env.PORT || 3000;
 
+app.use(cors())
+app.use(express.json());
+app.use(express.urlencoded({extended: true}))
+
 app.get("/", (req, res) =>  {
     res.json({
         status: "ok",
@@ -23,6 +28,7 @@ app.get("/", (req, res) =>  {
     })
 });
 
+app.use("/urlShortener", urlRoutes)
 
 app.listen(port, () => {
     console.log("Server started on port: ", port);
