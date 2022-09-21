@@ -5,5 +5,6 @@ const router = express.Router();
 
 router.route("/").post(urlController.createShortenedUrl)
 router.route("/").get(urlController.getUrls)
+router.route("/").delete(urlController.deleteUrl)
 
 export default router
