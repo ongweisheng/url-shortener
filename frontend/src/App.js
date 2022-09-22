@@ -4,7 +4,7 @@ import Urls from "./components/Urls.js"
 function App() {
   return (
     <div className="container">
-      <h1 className="mb-5">Url Shortening Service</h1>
+      <h1 className="mb-5 mt-3">Url Shortening Service</h1>
       <Urls />
     </div>
   );
