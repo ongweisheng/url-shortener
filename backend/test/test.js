@@ -14,7 +14,7 @@ describe("URLs", () => {
                 originalUrl: "https://github.com/ongweisheng/url-shortener"
             }
             chai.request(app)
-                .post("/url-shortener")
+                .post("/urlShortener")
                 .send(url)
                 .end((err, res) => {
                     res.should.have.status(201)
@@ -31,7 +31,7 @@ describe("URLs", () => {
     describe("GET/", () => {
         it("Get all urls successful", (done) => {
             chai.request(app)
-                .get("/url-shortener")
+                .get("/urlShortener")
                 .end((err, res) => {
                     res.should.have.status(200)
                     res.body.should.be.a("array")
@@ -47,7 +47,7 @@ describe("URLs", () => {
     describe("GET/:shortenedUrl", () => {
         it("Get original url successful", (done) => {
             chai.request(app)
-                .get(`/url-shortener/${shortenedUrl}`)
+                .get(`/urlShortener/${shortenedUrl}`)
                 .end((err, res) => {
                     res.should.have.status(200)
                     done()
@@ -61,7 +61,7 @@ describe("URLs", () => {
                 originalUrl: "https://github.com/ongweisheng/url-shortener"
             }
             chai.request(app)
-                .delete("/url-shortener")
+                .delete("/urlShortener")
                 .end((err, res) => {
                     res.should.have(200)
                     res.body.should.have.property("acknowledged")
