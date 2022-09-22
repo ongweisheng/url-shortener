@@ -4,7 +4,9 @@ import cors from "cors"
 import "dotenv/config"
 import urlRoutes from "./routes/urlRoutes.js"
 
-const uri = process.env.DB_URL
+const uri = process.env.NODE_ENV === "test"
+    ? process.env.TEST_DB_URL
+    : process.env.DB_URL
 
 mongoose.connect(uri)
     .then((connections) => {
