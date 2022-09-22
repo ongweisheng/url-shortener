@@ -13,7 +13,7 @@ const urlSchema = new Schema({
         type: String,
         required: true,
         unique: true,
-        default: nanoid,
+        default: nanoid(),
     }
 })
 
