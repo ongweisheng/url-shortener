@@ -62,6 +62,7 @@ describe("URLs", () => {
             }
             chai.request(app)
                 .delete("/urlShortener")
+                .send(url)
                 .end((err, res) => {
                     res.should.have(200)
                     res.body.should.have.property("acknowledged")
