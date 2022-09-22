@@ -1,5 +1,5 @@
 import axios from "axios"
-const baseUrl = "https://mighty-sands-84969.herokuapp.com/urlShortener"
+const baseUrl = "https://mighty-sands-84969.herokuapp.com/urlShortener/"
 
 const createShortenedUrl = async (newObject) => {
     const request = axios.post(baseUrl, newObject)
@@ -20,7 +20,7 @@ const deleteUrl = async (newObject) => {
 }
 
 const getOriginalUrl = async (shortenedUrl) => {
-    const request = axios.get(`${baseUrl}/${shortenedUrl}`)
+    const request = axios.get(`${baseUrl}${shortenedUrl}`)
     const response = await request
     return response.data
 }

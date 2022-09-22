@@ -1,11 +1,11 @@
 import './App.css';
-import CreateShortenedUrl from "./components/CreateShortenedUrl.js"
+import Urls from "./components/Urls.js"
 
 function App() {
   return (
     <div className="container">
       <h1 className="mb-5">Url Shortening Service</h1>
-      <CreateShortenedUrl />
+      <Urls />
     </div>
   );
 }
