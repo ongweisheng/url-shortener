@@ -64,7 +64,7 @@ describe("URLs", () => {
                 .delete("/urlShortener")
                 .send(url)
                 .end((err, res) => {
-                    res.should.have(200)
+                    res.should.have.status(200)
                     res.body.should.have.property("acknowledged")
                     assert.equal(res.body.acknowledged, true)
                     res.body.should.have.property("deletedCount")
